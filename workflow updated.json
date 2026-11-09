@@ -1,0 +1,731 @@
+{
+  "name": "workflow updated",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "091475fe-e6d7-4527-90f6-4eaa03b96de4",
+      "name": "When clicking ‘Execute workflow’",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -16,
+        -32
+      ]
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "cb30cbf8-83fc-4801-af50-99f6bcc81b9b",
+              "name": "LinkedIn Search URL",
+              "value": "https://www.linkedin.com/jobs/search/?keywords=%22software%20engineer%22%20NOT%20senior%20NOT%20staff%20NOT%20lead%20NOT%20principal%20NOT%20manager%20NOT%20architect&geoId=101620260&f_TPR=r86400&f_E=2&sortBy=DD&position=1&pageNum=0",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "e8e45e7f-e512-40ca-bf1b-a0d937debbef",
+      "name": "Job search URL",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.5,
+      "position": [
+        192,
+        -32
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "Run actor and get dataset",
+        "actorId": {
+          "__rl": true,
+          "value": "gdbRh93zn42kBYDyS",
+          "mode": "list",
+          "cachedResultName": "Advanced Linkedin Job Scraper (curious_coder/linkedin-jobs-search-scraper)",
+          "cachedResultUrl": "https://console.apify.com/actors/gdbRh93zn42kBYDyS/input"
+        },
+        "customBody": "={\n    \"cookies\": [\n        {\n            \"domain\": \".linkedin.com\",\n            \"expirationDate\": 1800176018,\n            \"hostOnly\": false,\n            \"httpOnly\": false,\n            \"name\": \"mbox\",\n            \"path\": \"/\",\n            \"sameSite\": \"no_restriction\",\n            \"secure\": true,\n            \"session\": false,\n            \"storeId\": null,\n            \"value\": \"session#eb9cb8d0297c485e8c89f57d495f62d3#1784625878|PC#eb9cb8d0297c485e8c89f57d495f62d3.37_0#1800176018\"\n        },\n        {\n            \"domain\": \".linkedin.com\",\n            \"expirationDate\": 1795159617.276365,\n            \"hostOnly\": false,\n            \"httpOnly\": false,\n            \"name\": \"lms_ads\",\n            \"path\": \"/\",\n            \"sameSite\": \"no_restriction\",\n            \"secure\": true,\n            \"session\": false,\n            \"storeId\": null,\n            \"value\": \"AQHXCSu_kAahdwAAAaFdWyJ-KIILTtxYJXI4wJsLMkmPtDENJtm1ntrkueol9eb-XPZ7xVz7XVutex0qUV60-igwsf_7UutR\"\n        },\n        {\n            \"domain\": \".linkedin.com\",\n            \"expirationDate\": 1800346548.743742,\n            \"hostOnly\": false,\n            \"httpOnly\": false,\n            \"name\": \"_guid\",\n            \"path\": \"/\",\n            \"sameSite\": \"no_restriction\",\n            \"secure\": true,\n            \"session\": false,\n            \"storeId\": null,\n            \"value\": \"a2c74a3d-c7e3-4e09-8976-c24e952b07dd\"\n        },\n        {\n            \"domain\": \".linkedin.com\",\n            \"expirationDate\": 1824191267.719643,\n            \"hostOnly\": false,\n            \"httpOnly\": false,\n            \"name\": \"bcookie\",\n            \"path\": \"/\",\n            \"sameSite\": \"no_restriction\",\n            \"secure\": true,\n            \"session\": false,\n            \"storeId\": null,\n            \"value\": \"\\\"v=2&8364b3cf-040f-45c5-8608-07b770bf9b1b\\\"\"\n        },\n        {\n            \"domain\": \".linkedin.com\",\n            \"expirationDate\": 1792656649.551363,\n            \"hostOnly\": false,\n            \"httpOnly\": true,\n            \"name\": \"__cf_bm\",\n            \"path\": \"/\",\n            \"sameSite\": \"no_restriction\",\n            \"secure\": true,\n            \"session\": false,\n            \"storeId\": null,\n            \"value\": \"CmUFZHVxxq4wWBSUzz1FQmlnr7Td8r6zohLeIf5dZFg-1792654848.744831-1.0.1.1-Kc3QCdtUlmK0JdI5MA4yd6jvoj9bHidT73DWqcu3SJvJp3etClqeUL9nK_lc0RSM9vOIs4LpsWqRpw0sIQHG6t5IA8BVbVMqSGL3AWqyLhVpy3Lkv3XlqN5eyEwxtURS\"\n        },\n        {\n            \"domain\": \".linkedin.com\",\n            \"expirationDate\": 1795159617.276443,\n            \"hostOnly\": false,\n            \"httpOnly\": false,\n            \"name\": \"lms_analytics\",\n            \"path\": \"/\",\n            \"sameSite\": \"no_restriction\",\n            \"secure\": true,\n            \"session\": false,\n            \"storeId\": null,\n            \"value\": \"AQHXCSu_kAahdwAAAaFdWyJ-KIILTtxYJXI4wJsLMkmPtDENJtm1ntrkueol9eb-XPZ7xVz7XVutex0qUV60-igwsf_7UutR\"\n        },\n        {\n            \"domain\": \".linkedin.com\",\n            \"hostOnly\": false,\n            \"httpOnly\": true,\n            \"name\": \"fptctx2\",\n            \"path\": \"/\",\n            \"sameSite\": null,\n            \"secure\": true,\n            \"session\": true,\n            \"storeId\": null,\n            \"value\": \"AQHnTqUGax%252fxQXPS5sNOe4AOLTqv8dXK%252fkpfsL91yIqb9XyHi163EaIiXxk9%252f5C9z0QP6mrRV6T%252baVt38F2%252bQ3PQs18U6lCEuvQJocJaYWuAX6kT6EV4OnVmQ0GYngMcsRRuIAZn%252b03lfB2MLA8OtGwh4pNyvyzqSfjTAvnqfnx6iwc77qwMpImhfKEihKI2c%252bhGAQCrD5CRRT74kD1rV1uHMfN%252fqGKyIWwQL1GaMZeLrHs4z%252b8zB8VFCIfN1THV4t86okzvWsQ82n1s0BhBbpbQJuTeiALVdbKVd4PcFhM%252bWIbu1NMeRYvKq7XrExEpBNjCJh2uVFuXWPIJlA5VjxK6d7wqEZTbCNKQwLSbs0rxewufrX5LizTpEKRUWDVwMEk%253d\"\n        },\n        {\n            \"domain\": \".www.linkedin.com\",\n            \"expirationDate\": 1824103617.276476,\n            \"hostOnly\": false,\n            \"httpOnly\": true,\n            \"name\": \"li_at\",\n            \"path\": \"/\",\n            \"sameSite\": \"no_restriction\",\n            \"secure\": true,\n            \"session\": false,\n            \"storeId\": null,\n            \"value\": \"AQEDATt4eNYBCDR4AAABnoILh08AAAGhgWemT1YAOKPZyfjnQOWitpFGbE5mIN2n9_X5DsCmd9zV7-QVk6wWoyvPO8zktPjQEBWHUkYJdsFKc8AAAS9toEfqHKZcUAGIgBy4qnU_JPfNp0ts3oklvXAB\"\n        },\n        {\n            \"domain\": \".linkedin.com\",\n            \"hostOnly\": false,\n            \"httpOnly\": false,\n            \"name\": \"lang\",\n            \"path\": \"/\",\n            \"sameSite\": \"no_restriction\",\n            \"secure\": true,\n            \"session\": true,\n            \"storeId\": null,\n            \"value\": \"v=2&lang=en-us\"\n        },\n        {\n            \"domain\": \".linkedin.com\",\n            \"expirationDate\": 1792741248.702779,\n            \"hostOnly\": false,\n            \"httpOnly\": false,\n            \"name\": \"lidc\",\n            \"path\": \"/\",\n            \"sameSite\": \"no_restriction\",\n            \"secure\": true,\n            \"session\": false,\n            \"storeId\": null,\n            \"value\": \"\\\"b=VB98:s=V:r=V:a=V:p=V:g=3618:u=186:x=1:i=1792655057:t=1792741248:v=2:sig=AQGWwpouDI1ewaFUECM1Pj197T6R5X8X\\\"\"\n        },\n        {\n            \"domain\": \".linkedin.com\",\n            \"expirationDate\": 1795159616.850096,\n            \"hostOnly\": false,\n            \"httpOnly\": false,\n            \"name\": \"AnalyticsSyncHistory\",\n            \"path\": \"/\",\n            \"sameSite\": \"no_restriction\",\n            \"secure\": true,\n            \"session\": false,\n            \"storeId\": null,\n            \"value\": \"AQIWLBc7GrmAhQAAAaFdWyB2H_KQbi3T3ArB5bzBjywBN1Muel7p_gDlcjsbfPb69SRrKn1zt7OQ6fFc4A9t1w\"\n        },\n        {\n            \"domain\": \".www.linkedin.com\",\n            \"expirationDate\": 1824191267.719682,\n            \"hostOnly\": false,\n            \"httpOnly\": true,\n            \"name\": \"bscookie\",\n            \"path\": \"/\",\n            \"sameSite\": \"no_restriction\",\n            \"secure\": true,\n            \"session\": false,\n            \"storeId\": null,\n            \"value\": \"\\\"v=1&202605270611298aace08d-c5b1-42a3-8c22-7d190b9b9332AQGxXwmAh6yHpkMNssnc0_uOBoBfOgaU\\\"\"\n        },\n        {\n            \"domain\": \".linkedin.com\",\n            \"expirationDate\": 1811834259.446489,\n            \"hostOnly\": false,\n            \"httpOnly\": true,\n            \"name\": \"dfpfpt\",\n            \"path\": \"/\",\n            \"sameSite\": null,\n            \"secure\": true,\n            \"session\": false,\n            \"storeId\": null,\n            \"value\": \"cba07a9e10664eb384055cb45cdd3136\"\n        },\n        {\n            \"domain\": \".www.linkedin.com\",\n            \"expirationDate\": 1824103617.27658,\n            \"hostOnly\": false,\n            \"httpOnly\": false,\n            \"name\": \"JSESSIONID\",\n            \"path\": \"/\",\n            \"sameSite\": \"no_restriction\",\n            \"secure\": true,\n            \"session\": false,\n            \"storeId\": null,\n            \"value\": \"\\\"ajax:2425320385589769030\\\"\"\n        },\n        {\n            \"domain\": \".linkedin.com\",\n            \"expirationDate\": 1800431056.645461,\n            \"hostOnly\": false,\n            \"httpOnly\": false,\n            \"name\": \"li_sugr\",\n            \"path\": \"/\",\n            \"sameSite\": \"no_restriction\",\n            \"secure\": true,\n            \"session\": false,\n            \"storeId\": null,\n            \"value\": \"b2a17f48-5fd0-4eb2-8f21-1aaed3607611\"\n        },\n        {\n            \"domain\": \".www.linkedin.com\",\n            \"expirationDate\": 1808207054,\n            \"hostOnly\": false,\n            \"httpOnly\": false,\n            \"name\": \"li_theme\",\n            \"path\": \"/\",\n            \"sameSite\": null,\n            \"secure\": true,\n            \"session\": false,\n            \"storeId\": null,\n            \"value\": \"light\"\n        },\n        {\n            \"domain\": \".www.linkedin.com\",\n            \"expirationDate\": 1808207054,\n            \"hostOnly\": false,\n            \"httpOnly\": false,\n            \"name\": \"li_theme_set\",\n            \"path\": \"/\",\n            \"sameSite\": null,\n            \"secure\": true,\n            \"session\": false,\n            \"storeId\": null,\n            \"value\": \"app\"\n        },\n        {\n            \"domain\": \".linkedin.com\",\n            \"expirationDate\": 1824103617.27655,\n            \"hostOnly\": false,\n            \"httpOnly\": false,\n            \"name\": \"liap\",\n            \"path\": \"/\",\n            \"sameSite\": \"no_restriction\",\n            \"secure\": true,\n            \"session\": false,\n            \"storeId\": null,\n            \"value\": \"true\"\n        },\n        {\n            \"domain\": \".www.linkedin.com\",\n            \"expirationDate\": 1793868254,\n            \"hostOnly\": false,\n            \"httpOnly\": false,\n            \"name\": \"timezone\",\n            \"path\": \"/\",\n            \"sameSite\": null,\n            \"secure\": true,\n            \"session\": false,\n            \"storeId\": null,\n            \"value\": \"Asia/Jerusalem\"\n        },\n        {\n            \"domain\": \".linkedin.com\",\n            \"expirationDate\": 1795247053.117558,\n            \"hostOnly\": false,\n            \"httpOnly\": true,\n            \"name\": \"UserMatchHistory\",\n            \"path\": \"/\",\n            \"sameSite\": \"no_restriction\",\n            \"secure\": true,\n            \"session\": false,\n            \"storeId\": null,\n            \"value\": \"AQJEbzH3kFfc8gAAAaFikU-ESAKHTkAnAURlcfkhG9BCWOHT4MjYhsB5j1RYRlnstoftRG9mRD6I3j4KLlDGQ6JLLiJdaNvuwd661ZCJuldfe3ZGvQNFf7e7SZeCeApFL-MCDW-2K36jrqh7eZSWsrT5ZrkTQ0XjNeFB9gofrNOvXzAuI0TUViS_cwejj8EVZ0FbwBARhaSt8eNDFglQpbSk687-NdB8aZVhVErL0zcWZ9CRY6aftnv7L-suCSLtW905cw2wQkR-bY7cNa1JTt0ZbE_ck3JFobUD9VyrJC9HS5UlAYcJDCQBNLfrPL6_QMd_QkZQ-ZPBAIN4gXY6mJKN7FduH5rDVg56VAuwSeC7BZdiMg\"\n        }\n    ],\n    \"count\": 100,\n    \"filters.applyWithLinkedin\": false,\n    \"filters.earlyApplicant\": false,\n    \"filters.fairChanceEmployer\": false,\n    \"filters.jobInYourNetwork\": false,\n    \"filters.verifiedJob\": false,\n    \"filters.workRemoteAllowed\": false,\n    \"scrapeCompany\": false,\n    \"scrapeJobDetails\": true,\n    \"scrapeSkills\": false,\n    \"searchUrl\": \"{{ $('Job search URL').item.json['LinkedIn Search URL'] }}\",\n    \"userAgent\": \"Chrome/155.0.0.0\"\n} ",
+        "timeout": {},
+        "maxTotalChargeUsd": {}
+      },
+      "id": "b952eaaa-c24f-4c76-ada0-e99a505a1ec1",
+      "name": "Scrape jobs",
+      "type": "@apify/n8n-nodes-apify.apify",
+      "typeVersion": 2,
+      "position": [
+        688,
+        -32
+      ],
+      "credentials": {
+        "apifyApi": {
+          "id": "qZIkdrQQkh7CGGKZ",
+          "name": "Apify account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-5-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-5-MINI"
+        },
+        "responses": {
+          "values": [
+            {
+              "role": "system",
+              "content": "You are a helpful, intelligent job filtering assistant."
+            },
+            {
+              "content": "=##Overview\nI'm looking for jobs. Your task is to filter them based on a list of attibutions and skills that I have. Some jobs may not be relevant, which is why I want you to go through each one of them and let me know wether or not I'm a good fit.\n\n##Context\nbelow are my skills and projects, and my resume:\n\n{{ $('get projects and skills').item.json.content }}\n\n{{ $json.content }}\n\n##Job Description.\n\n{{ $('Scrape jobs').item.json.descriptionText }}\n\nNotes:\n\n- If a job requires basic programming skills that you cannot infer directly from my projects or my resume template (such as real-time systems), add them in the technical skills section anyway and I will learn it before the job itself - do not deem the job irrelevant.\n- Full stack developer roles are relevant, if they require up to 2-3 years of experience.\n- Do not deem a job posting irrelevant only because it requires experience - meaning that if a job posting requires up to 2-3 years of experience, do not disqualify it.\n- Jobs that are not related to software fields (snipper, helpdesk, etc.) are irrelevant.\n\nRespond in JSON format:\n\n{\"verdict\": \"true or false\"}\n\nIf I'm a fit return true\nIf I'm not a fit return false\n\nalso, provide an explanation for why i'm not a good fit for the following job.\n"
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {
+          "textFormat": {
+            "textOptions": {
+              "type": "json_object"
+            }
+          }
+        }
+      },
+      "id": "2288fb40-da0f-4c89-a8ee-343e79bfb8a3",
+      "name": "Check relevance",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.3,
+      "position": [
+        288,
+        256
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "TYqdDAz2izxV4ih1",
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 4
+          },
+          "conditions": [
+            {
+              "id": "7d09cc15-e0cd-4644-b4f6-1a3f124233a8",
+              "leftValue": "={{ $json.output[0].content[0].text.verdict }}",
+              "rightValue": "true",
+              "operator": {
+                "type": "string",
+                "operation": "equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "looseTypeValidation": true,
+        "options": {}
+      },
+      "id": "fcb850d3-57d0-4d7a-86db-3b8b2b67ea60",
+      "name": "Filter",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.4,
+      "position": [
+        608,
+        256
+      ],
+      "alwaysOutputData": true
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "has-output",
+              "leftValue": "={{ $json.output !== undefined }}",
+              "rightValue": true,
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "ba1ed093-2fab-43f8-a19a-bddb3308e45e",
+      "name": "Has matches?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        784,
+        256
+      ]
+    },
+    {
+      "parameters": {
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-5-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-5-MINI"
+        },
+        "responses": {
+          "values": [
+            {
+              "role": "system",
+              "content": "=You are a helpful, intelligent resume writing assistant that drafts high converting resumes based on jobs.\n\nReturn ONLY a JSON object with exactly these keys, no other text:\nSUMMARY, PROGRAMMING, CONCEPTS, CONTAINERS, TOOLS, PROJECT1_BULLETS, PROJECT2_BULLETS\n\nRules:\n- Values contain only the text that goes after the label. Do not repeat labels\n  like \"Programming & OS:\", project titles, or links.\n- PROJECT1_BULLETS and PROJECT2_BULLETS: one bullet per line, separated by \\n,\n  with no \"-\" or \"•\" characters.\n- Only reorder, reword, or emphasize what is already in the resume.\n- Do not leave entries as N/A\n- Write only information that is relevant for the job as per the job description.\n- provide maximum 4 bullets per project, without repeating the github repo link in either of the bullets.\n\n"
+            },
+            {
+              "content": "=##Overview\nI'm looking for jobs. Your task is to customise a provided resume using a provided job description.\n\n##Context\n\nbelow are my skills and projects, and my resume:\n\n{{ $('get projects and skills').item.json.content }}\n\n{{ $json.content }}\n\n##Job Description.\n\n{{ $('Scrape jobs').item.json.descriptionText }}\n\nThe customised resume should follow the exact template of the provided input resume - change no titles, no structure - only phrasings of words to fit all the ATS requirements for the specific job.\n\nIt should still fit into 1 page.\n\nRespond with only the customised, updated resume - nothing else.\n\n\nReturn ONLY a JSON object with exactly these keys, no other text:\nSUMMARY, PROGRAMMING, CONCEPTS, CONTAINERS, TOOLS, PROJECT1,PROJECT1_GITHUB, PROJECT1_BULLETS, PROJECT2, PROJECT2_GITHUB, PROJECT2_BULLETS\n\nRules:\n- Values contain only the text that goes after the label. Do not repeat labels\n  like \"Programming & OS:\", project titles, or links.\n- PROJECT1_BULLETS and PROJECT2_BULLETS: one bullet per line, separated by \\n,\n  with no \"-\" or \"•\" characters.\n- Only reorder, reword, or emphasize what is already in the resume.\n- Do not leave entries as N/A\n- Write only information that is relevant for the job as per the job description.\n- provide maximum 4 bullets per project, without repeating the github repo link in either of the bullets.\n"
+            }
+          ]
+        },
+        "builtInTools": {},
+        "options": {}
+      },
+      "id": "7b7a9be4-52de-42ac-b23d-216ec39e6497",
+      "name": "Customise resume",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 2.3,
+      "position": [
+        1040,
+        240
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "TYqdDAz2izxV4ih1",
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "documentURL": "https://docs.google.com/document/d/14K2gukcy2HY_3hdMV51W0yqHK-SLyeB-NL0zBlXJpLo/edit?tab=t.0"
+      },
+      "id": "741545a3-090c-4a97-ae83-ed950f621e8e",
+      "name": "get template",
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        0,
+        448
+      ],
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "86FCKd1w9IrnhiRM",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "copy",
+        "fileId": {
+          "__rl": true,
+          "value": "={{ $json.documentId }}",
+          "mode": "id"
+        },
+        "name": "=CV - YS  {{ $('Scrape jobs').item.json.companyName }}",
+        "options": {}
+      },
+      "id": "18d400cb-705f-4bac-bbc9-043f03c52a9c",
+      "name": "copy template",
+      "type": "n8n-nodes-base.googleDrive",
+      "typeVersion": 3,
+      "position": [
+        208,
+        448
+      ],
+      "credentials": {
+        "googleDriveOAuth2Api": {
+          "id": "ymmVAxsGbVzJncVI",
+          "name": "Google Drive account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "jsCode": "const resp = $('Customise resume').item.json;\n// adjust this path to wherever the text sits in your OpenAI node's output\nconst text = $('Customise resume').item.json.output[0].content[0].text;\nconst fields = JSON.parse(text.replace(/```json|```/g, '').trim());\n\nreturn {\n  json: {\n    docId: $json.id,\n    requests: Object.entries(fields).map(([key, value]) => ({\n      replaceAllText: {\n        containsText: { text: `{{${key}}}`, matchCase: true },\n        replaceText: String(value)\n      }\n    }))\n  }\n};"
+      },
+      "id": "16d9d3c1-c3a8-4bc6-b2ed-1316f401e66c",
+      "name": "Code in JavaScript",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        416,
+        448
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=https://docs.googleapis.com/v1/documents/{{ $json.docId }}:batchUpdate",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googleDocsOAuth2Api",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "= {{ JSON.stringify({ requests: $json.requests }) }}",
+        "options": {}
+      },
+      "id": "948b1b07-bcfd-4680-a359-90cf4907a766",
+      "name": "HTTP Request",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        640,
+        448
+      ],
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "86FCKd1w9IrnhiRM",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1IpOwfCy_DNv1XrH31wGUo3QboMzzMDufA-EHZtfpQe0",
+          "mode": "list",
+          "cachedResultName": "Jobs Tracker DB",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1IpOwfCy_DNv1XrH31wGUo3QboMzzMDufA-EHZtfpQe0/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Sheet1",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1IpOwfCy_DNv1XrH31wGUo3QboMzzMDufA-EHZtfpQe0/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Job Post Link": "={{ $('Scrape jobs').item.json.link }}",
+            "Job Title": "={{ $('Scrape jobs').item.json.title }}",
+            "Posted At": "={{ $('Scrape jobs').item.json.postedAt }}",
+            "Company Name": "={{ $('Scrape jobs').item.json.companyName }}",
+            "Description": "={{ $('Scrape jobs').item.json.descriptionText }}",
+            "Resume URL": "=https://docs.google.com/document/d/{{ $('copy template').item.json.id }}/edit\n",
+            "Application URL": "={{ $('Scrape jobs').item.json.applyUrl }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Job Post Link",
+              "displayName": "Job Post Link",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Job Title",
+              "displayName": "Job Title",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Seniority Level",
+              "displayName": "Seniority Level",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": true
+            },
+            {
+              "id": "Posted At",
+              "displayName": "Posted At",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Company Name",
+              "displayName": "Company Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Description",
+              "displayName": "Description",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "No Applicants",
+              "displayName": "No Applicants",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Resume URL",
+              "displayName": "Resume URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            },
+            {
+              "id": "Application URL",
+              "displayName": "Application URL",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true,
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "id": "421a3765-64c1-4697-950f-de72b27a091a",
+      "name": "Append row in sheet",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        896,
+        448
+      ],
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "xh4pXqiHLU7m4b9n",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "batchSize": 5,
+        "options": {}
+      },
+      "id": "a27b20db-40a8-415d-a0f6-dc2bc631ba59",
+      "name": "Loop Over Items",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [
+        1120,
+        -32
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 4
+          },
+          "conditions": [
+            {
+              "id": "4185ff8c-3bc9-4dd3-b7d6-9322487beaf1",
+              "leftValue": "={{ $json.title }}",
+              "rightValue": "/senior|staff|lead|principal|manager|architect/i",
+              "operator": {
+                "type": "string",
+                "operation": "notRegex"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.4,
+      "position": [
+        912,
+        -32
+      ],
+      "id": "19ea8253-95db-4442-baa9-e989309117fa",
+      "name": "Filter1"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "documentURL": "https://docs.google.com/document/d/1cBeg62QIcVMawq6mcjXlp7xjmcQ2NW3CKZlvRQOhVf8/edit?tab=t.0"
+      },
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        432,
+        -32
+      ],
+      "id": "0fcdb8c5-0985-4c0d-a47c-47331aa92371",
+      "name": "get projects and skills",
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "86FCKd1w9IrnhiRM",
+          "name": "Google Docs account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "documentURL": "https://docs.google.com/document/d/14K2gukcy2HY_3hdMV51W0yqHK-SLyeB-NL0zBlXJpLo/edit?tab=t.0"
+      },
+      "id": "0ea0f3a3-682f-4304-b36f-7d80eb57910f",
+      "name": "Get resume",
+      "type": "n8n-nodes-base.googleDocs",
+      "typeVersion": 2,
+      "position": [
+        32,
+        256
+      ],
+      "credentials": {
+        "googleDocsOAuth2Api": {
+          "id": "86FCKd1w9IrnhiRM",
+          "name": "Google Docs account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Job search URL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Job search URL": {
+      "main": [
+        [
+          {
+            "node": "get projects and skills",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Scrape jobs": {
+      "main": [
+        [
+          {
+            "node": "Filter1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check relevance": {
+      "main": [
+        [
+          {
+            "node": "Filter",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter": {
+      "main": [
+        [
+          {
+            "node": "Has matches?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Has matches?": {
+      "main": [
+        [
+          {
+            "node": "Customise resume",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Customise resume": {
+      "main": [
+        [
+          {
+            "node": "get template",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get template": {
+      "main": [
+        [
+          {
+            "node": "copy template",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "copy template": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Append row in sheet": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop Over Items": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Get resume",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filter1": {
+      "main": [
+        [
+          {
+            "node": "Loop Over Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "get projects and skills": {
+      "main": [
+        [
+          {
+            "node": "Scrape jobs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get resume": {
+      "main": [
+        [
+          {
+            "node": "Check relevance",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "7d0b90af-40cc-4f79-9057-f391e4381544",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e8c5d95c0a5b269df65bac4f032950116b1eafe9ea43ee54d922501cdfb6d0f5"
+  },
+  "nodeGroups": [],
+  "id": "Ai3fiznRSVvcS7Bu",
+  "tags": []
+}
